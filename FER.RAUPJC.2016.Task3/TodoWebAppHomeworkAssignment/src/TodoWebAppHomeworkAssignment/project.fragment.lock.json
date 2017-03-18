@@ -1,0 +1,24 @@
+{
+  "version": 2,
+  "exports": {
+    "TodoRepositoryLibrary/1.0.0": {
+      "type": "project",
+      "framework": ".NETFramework,Version=v4.5.2",
+      "compile": {
+        "bin/Debug/TodoRepositoryLibrary.dll": {}
+      },
+      "runtime": {
+        "../packages/EntityFramework.6.0.0/lib/net45/EntityFramework.SqlServer.dll": {},
+        "../packages/EntityFramework.6.0.0/lib/net45/EntityFramework.dll": {},
+        "bin/Debug/TodoRepositoryLibrary.dll": {}
+      },
+      "contentFiles": {
+        "bin/Debug/TodoRepositoryLibrary.pdb": {
+          "buildAction": "None",
+          "codeLanguage": "any",
+          "copyToOutput": true
+        }
+      }
+    }
+  }
+}

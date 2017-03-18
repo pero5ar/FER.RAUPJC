@@ -1,0 +1,33 @@
+﻿@using System.Collections.Generic;
+@using TodoRepositoryLibrary
+@model List<TodoItem>
+
+@{
+    const string title = "Active ToDo List";
+    ViewBag.Title = title;
+    Layout = "_Layout";
+}
+
+<h2>@title</h2>
+
+<div>
+    <a asp-action="Add">Add a New ToDo <span class="glyphicon glyphicon-plus-sign"></span></a>
+    &nbsp;
+    <a asp-action="Completed">Completed ToDo List <span class="glyphicon glyphicon-th-list"></span></a>
+</div>
+
+<hr />
+
+<div class="list-group">
+    @foreach (var todo in Model)
+    {
+        <div>
+            @todo.Text
+            <span class="label label-info"> @todo.DateCreated.ToLocalTime().ToLongDateString() </span>
+            &nbsp;
+            <a asp-action="CompleteTodo" asp-route-todoId="@todo.Id" title="Mark as Complete">
+                <span class="glyphicon glyphicon-ok-sign"></span>
+            </a>
+        </div>
+    }
+</div>
